@@ -1,0 +1,112 @@
+.bar, .widget1, .powermenu .powerwindow {
+  border-color: transparent;
+  background-color: rgba(57, 57, 57);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.frame {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.container, .containerlabel {
+  border-color: transparent;
+  background-color: rgba(50, 50, 50);
+  padding: 10px 10px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
+}
+
+.sliders, .spotify, .internet {
+    border-color: transparent;
+    background-color: #232323;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.sliders {
+    font-size: 30px;
+    padding-right: 50px;
+    background-color: rgba(35, 35, 35, 0.28);
+    box-shadow: 5px 5px 5px rgba(20, 20, 20, 0.33);
+}
+
+.widget {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 10px 10px;
+    border-radius: 20px;
+}
+
+button {
+  border-radius: 20px;
+  background-color: #434343;
+  color: #ffffff;
+  margin: 3px;
+  box-shadow: 3px 3px 5px rgba(25, 25, 25, 0.45);
+  border-color: #343434;
+}
+
+button:hover {
+  background-color: #373737;
+  color: #b5b5b5;
+}
+
+.media_data{
+    padding: 0px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 15px;
+}
+
+.internet {
+    font-size: 20px;
+}
+
+.mb {
+    font-family: "Go Mono Nerd Font";
+    border-color: transparent;
+    font-size: 30px;
+}
+
+scale {
+	color: #ffffff;
+}
+
+.powerbuttons {
+  font-family: "Go Mono Nerd Font";
+  font-size: 20px;
+}
+
+.containerlabel {
+  margin: 20 20px;
+  font-size: 20pt;
+  background-color: rgb(94, 94, 94);
+}
+
+.powerbutton {
+  margin: 20px;
+  box-shadow: 5px 0px 5px rgba(0,0,0,0.5);
+  font-size: 30pt;
+}
+
+calendar {
+  padding: 10px;
+  font-size: 15pt;
+  border-color: transparent;
+  border: 0px;
+}

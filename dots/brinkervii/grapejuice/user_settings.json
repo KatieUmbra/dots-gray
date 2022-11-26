@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "hardware_profile": {
+    "graphics_id": "6a48fe971cf7f311b9e6b22ad894c3ffee5d04b6d98d8691044bd9f02f729d95",
+    "gpu_vendor_id": 1,
+    "gpu_pci_id": "08:00.0",
+    "gpu_can_do_vulkan": true,
+    "provider_index": 0,
+    "provider_name": "AMD Radeon Vega 8 Graphics @ pci:0000:08:00.0",
+    "should_prime": false,
+    "use_mesa_gl_override": false,
+    "preferred_roblox_renderer_string": "Vulkan",
+    "is_multi_gpu": false,
+    "version": 2
+  },
+  "show_fast_flag_warning": true,
+  "release_channel": "master",
+  "disable_updates": false,
+  "try_profiling_hardware": true,
+  "default_wine_home": "/home/kanwi/.local/share/grapejuice/user/wine-download/wine-tkg-staging-fsync-git-7.1.r2.gc437a01e",
+  "wineprefixes": [
+    {
+      "id": "ca266b87-55fa-4e4d-ba57-171180fbeda6",
+      "priority": 0,
+      "name_on_disk": "player",
+      "display_name": "Player",
+      "wine_home": "/home/kanwi/.local/share/grapejuice/user/wine-download/wine-tkg-staging-fsync-git-7.1.r2.gc437a01e",
+      "dll_overrides": "dxdiagn=;winemenubuilder.exe=",
+      "prime_offload_sink": -1,
+      "use_mesa_gl_override": false,
+      "enable_winedebug": false,
+      "winedebug_string": "",
+      "roblox_renderer": "Vulkan",
+      "env": {},
+      "hints": [
+        "player",
+        "app"
+      ],
+      "fast_flags": {
+        "roblox_studio": {},
+        "roblox_player": {},
+        "roblox_app": {}
+      },
+      "third_party": {
+        "fps_unlocker": true,
+        "dxvk": false
+      }
+    },
+    {
+      "id": "10c4aaf0-58de-44b9-a9c0-7def21ca0b33",
+      "priority": 0,
+      "name_on_disk": "studio",
+      "display_name": "Studio",
+      "wine_home": "/home/kanwi/.local/share/grapejuice/user/wine-download/wine-tkg-staging-fsync-git-7.1.r2.gc437a01e",
+      "dll_overrides": "dxdiagn=;winemenubuilder.exe=",
+      "prime_offload_sink": -1,
+      "use_mesa_gl_override": false,
+      "enable_winedebug": false,
+      "winedebug_string": "",
+      "roblox_renderer": "__undetermined__",
+      "env": {},
+      "hints": [
+        "studio"
+      ],
+      "fast_flags": {
+        "roblox_studio": {},
+        "roblox_player": {},
+        "roblox_app": {}
+      },
+      "third_party": {
+        "fps_unlocker": false,
+        "dxvk": false
+      }
+    }
+  ],
+  "unsupported_settings": {}
+}

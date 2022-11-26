@@ -1,0 +1,78 @@
+// mypink config file by kanwi https://twitter.com/kanwi_
+
+* {
+	//defined variables
+	background: rgba(57, 57, 57);
+	bg-alt:		rgba(50, 50, 50);
+	bg-alt-2:	#232323;
+	txt-color:	#ffffff;
+	foreground: #eac9dd;
+	main-color: #a38c9a;
+	bd-color:	#a870a9;
+	font1:		"NotoSans Nerd Font 16";
+
+	//rofi config
+	//background-color: @background;
+	text-color: @txt-color;
+	font: @font1;
+
+	transparency: true;
+
+}
+
+window {
+	background-color: @background;
+	width: 25%;
+	height: 50%;
+	location: northwest;
+	y-offset: 6.5%;
+	x-offset: 0.5%;
+	border-radius: 10px;
+	border-color: @bd-color;
+	border: 0px;
+	margin: 5;
+	padding: 0;
+	spacing: 0;
+}
+
+mainbox {
+	background-color: @background;
+}
+
+inputbar {
+	background-color: @bg-alt-2;
+	children: [prompt,entry];
+	padding: 0;
+	border: 0;
+}
+
+entry {
+	background-color: @bg-alt-2;
+	padding: 10;
+}
+
+prompt{
+	background-color: @bg-alt;
+	padding: 10;
+}
+
+listview, element{
+	background-color: @background;
+}
+
+element-text {
+	background-color: @background;
+	padding: 5;
+	vertical-align: 0.5;
+}
+
+element-text.selected, element-icon.selected, element.selected {
+	background-color: @bg-alt-2;
+}
+
+element-icon {
+	background-color: @background;
+	enabled: true;
+	size: 4%;
+	padding: 1%;
+}

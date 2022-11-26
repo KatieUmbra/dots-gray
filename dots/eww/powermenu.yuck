@@ -1,0 +1,32 @@
+(defvar size 80)
+(defwindow powermenu
+    :monitor 0
+    :geometry (geometry
+                :x "0.621%"
+                :y "-27%"
+                :width "4.5%"
+                :height "25%"
+                :anchor "center left"
+               )
+    :stacking "fg"
+    :focusable true
+    :windowtype "dock"
+    :wm-ignore true
+    (powermenu)
+)
+
+(defwidget powermenu []
+    (eventbox
+        :onhoverlost "${eww} open --toggle powermenu"
+        (box
+        :class "widget"
+        :orientation "vertical"
+        :space-evenly false
+        (button :class "powerbuttons" :height size :width size :timeout "100s" :onclick "rofi -show drun -show-icons" "" )
+        (box :height 20)
+        (button :class "powerbuttons" :height size :width size :onclick "${eww} update power='shut down' && ${eww} update powercommand='shutdown now' && ${eww} open --toggle powerwindow && ${eww} open --toggle powermenu" "⏻")
+        (button :class "powerbuttons" :height size :width size :onclick "${eww} update power='reboot' && ${eww} update powercommand='reboot' && ${eww} open --toggle powerwindow && ${eww} open --toggle powermenu" "ﯩ")
+        (button :class "powerbuttons" :height size :width size :onclick "${eww} update power='log out' && ${eww} update powercommand='bspc quit' && ${eww} open --toggle powerwindow && ${eww} open --toggle powermenu" "")
+        )
+    )
+)

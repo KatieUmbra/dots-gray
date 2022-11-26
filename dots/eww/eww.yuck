@@ -1,0 +1,144 @@
+(include "widget1.yuck")
+(include "powermenu.yuck")
+(include "powerwindow.yuck")
+(defvar eww "~/.repos/eww/target/release/eww")
+(deflisten desktop :initial "0" "xprop -spy -root _NET_CURRENT_DESKTOP")
+(defvar power "none")
+(defvar powercommand "")
+
+(defpoll time
+    :interval "1s"
+    :initial "0:0:0"
+    'date +%r'
+)
+
+(defwindow bar
+    :monitor 0
+    :geometry (geometry        :x "0%"
+                               :y "0%"
+                               :width "98.8%"
+                               :height "4%"
+                               :anchor "top center")
+           :stacking "bg"
+           :focusable false
+           :windowtype "dock"
+           :wm-ignore false
+    (main)
+)
+
+(defwidget main []
+    (centerbox :orientation "h"
+        (frameleft
+            (container
+                (box
+                    :orientation "h"
+                    :space-evenly true
+                    :halign "start"
+                    (button
+                        :onclick "~/.repos/eww/target/release/eww open --toggle powermenu"
+                        ""
+                    )
+                )
+            )
+        )
+        (framecenter
+        	(container
+        		(workspaces)
+        	)
+        )
+        (frameright
+            (container
+                (button
+                	:hexpand false
+                    :onclick "${eww} open --toggle widget1"
+                    " 墳 "
+                )
+            )
+            (container
+                (button
+                    :class "time"
+                    :onclick "${eww} open --toggle calendar"
+                    time
+                )
+            )
+        )
+    )
+)
+
+(defwidget container []
+    (box
+        :class "container"
+        :orientation "h"
+        :space-evenly true
+        :halign "start"
+        (children)
+    )
+)
+
+(defwidget frameleft []
+    (box
+        :class "frame"
+        :orientation "h"
+        :space-evenly false
+        :halign "start"
+        (children)
+    )
+)
+
+(defwidget framecenter []
+    (box
+        :class "frame"
+        :orientation "h"
+        :space-evenly false
+        :halign "center"
+        (children)
+    )
+)
+
+(defwidget frameright []
+    (box
+        :class "frame"
+        :orientation "h"
+        :space-evenly false
+        :halign "end"
+        (children)
+    )
+)
+
+(defwidget workspaces []
+    (box
+        :orientation "h"
+        :space-evenly true
+        :halign "start"
+        (button :onclick "wmctrl -s 0" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 0" ? "" : ""})
+        (button :onclick "wmctrl -s 1" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 1" ? "" : ""})
+        (button :onclick "wmctrl -s 2" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 2" ? "" : ""})
+        (button :onclick "wmctrl -s 3" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 3" ? "" : ""})
+        (button :onclick "wmctrl -s 4" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 4" ? "" : ""})
+        (button :onclick "wmctrl -s 5" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 5" ? "" : ""})
+        (button :onclick "wmctrl -s 6" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 6" ? "" : ""})
+        (button :onclick "wmctrl -s 7" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 7" ? "" : ""})
+        (button :onclick "wmctrl -s 8" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 8" ? "" : ""})
+        (button :onclick "wmctrl -s 9" :active true {desktop == "_NET_CURRENT_DESKTOP(CARDINAL) = 9" ? "" : ""})
+
+    )
+)
+
+(defwindow calendar
+    :monitor 0
+    :geometry (geometry
+                :x "-0.6%"
+                :y "-26%"
+                :width "20%"
+                :height "17%"
+                :anchor "center right"
+               )
+    :stacking "fg"
+    :focusable true
+    :windowtype "dock"
+    :wm-ignore true
+    (eventbox
+        :onhoverlost "${eww} open --toggle calendar"
+        (calendar)
+    )
+)

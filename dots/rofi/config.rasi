@@ -1,0 +1,10 @@
+configuration {
+
+	display-drun: "Applications:";
+	display-window: "Windows:";
+	drun-display-format: "{icon} {name}";
+	modes: [ combi, drun ];
+	combi-modes: [ drun, run, window ];
+	icon-theme: "Papirus";
+}
+@theme "/home/kanwi/.config/rofi/themes/mygray.rasi"

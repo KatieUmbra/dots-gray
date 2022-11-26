@@ -1,0 +1,21 @@
+font_family			CaskaydiaCove Nerd font
+bold_font			auto
+italic_font			auto
+bold_italic_font	auto
+
+font_size 13
+disable_ligatures	never
+cursor_shape		beam
+
+url_style			dotted
+open_url_with		firefox
+detect_urls			yes
+copy_on_select		yes
+
+syntc_to_monitor	yes
+
+enable_audio_bell	no
+
+hide_window_decorations	yes
+
+

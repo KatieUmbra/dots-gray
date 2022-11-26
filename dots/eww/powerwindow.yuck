@@ -1,0 +1,39 @@
+(defwindow powerwindow
+    :monitor 0
+    :geometry (geometry
+                :x "0%"
+                :y "0%"
+                :width "25%"
+                :height "25%"
+                :anchor "center"
+               )
+    :stacking "fg"
+    :focusable true
+    :windowtype "dock"
+    :wm-ignore true
+    (powerwindow)
+)
+
+(defwidget powerwindow []
+    (eventbox
+        :onhoverlost "${eww} open --toggle powerwindow && ${eww} update power='none'"
+        (box
+            :orientation "v"
+        (label
+            :class "containerlabel"
+            :xalign 0.5
+            :yalign 0.5
+            :width "100%"
+            :wrap true
+            :text "Are you sure you want to ${power}?"
+        )
+        (box
+            (button :class "powerbutton" :onclick "${eww} close powerwindow && ${eww} update power='none' && ${eww} update powercommand=''" "No")
+            (button :class "powerbutton"
+                :onclick "${powercommand}"
+                "Yes"
+            )
+        )
+        )
+    )
+)

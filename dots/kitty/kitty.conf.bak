@@ -1,0 +1,48 @@
+font_family			CaskaydiaCove Nerd font
+bold_font			auto
+italic_font			auto
+bold_italic_font	auto
+
+font_size 13
+disable_ligatures	never
+cursor_shape		beam
+
+url_style			dotted
+open_url_with		firefox
+detect_urls			yes
+copy_on_select		yes
+
+syntc_to_monitor	yes
+
+enable_audio_bell	no
+
+hide_window_decorations	yes
+
+editor nano
+
+linux_display_server x11
+
+confirm_os_window_close 0
+
+window_padding_width 15
+
+foreground	#eac9dd
+background	#0f0b16
+cursor		#eac9dd
+
+color0       #0f0b16
+color8       #a38c9a
+color1       #6A509C
+color9       #6A509C
+color2       #9666B2
+color10      #9666B2
+color3       #B571BE
+color11      #B571BE
+color4       #E463A2
+color12      #E463A2
+color5       #F3A1A9
+color13      #F3A1A9
+color6       #B684C8
+color14      #B684C8
+color7       #eac9dd
+color15      #eac9dd

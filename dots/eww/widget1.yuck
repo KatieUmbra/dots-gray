@@ -1,0 +1,80 @@
+(defpoll volume :interval "1s" "pamixer --get-volume")
+(defpoll playing :interval "0.1s" 'playerctl metadata --format "{{status}}"')
+(defpoll artist :interval "1s" 'playerctl metadata --format "{{artist}}"')
+(defpoll track :interval "1s" 'playerctl metadata --format "{{title}}"')
+(defpoll ip :interval "1m" 'ip -json route get 8.8.8.8 | jq -r ".[].prefsrc"')
+
+(defwindow widget1
+    :monitor 0
+    :geometry (geometry
+                :x "-8%"
+                :y "-23%"
+                :width "20%"
+                :height "40%"
+                :anchor "center right"
+               )
+    :stacking "fg"
+    :focusable true
+    :windowtype "dock"
+    :wm-ignore true
+    (widget1)
+)
+
+(defwidget widget1 []
+    (eventbox
+        :onhoverlost "~/.repos/eww/target/release/eww open --toggle widget1"
+    (box
+        :orientation "vertical"
+        (spotify
+            (box :class "media_data"
+                :orientation "vertical"
+                (box :class "title" track)
+                (box :class "subtitle" artist)
+            )
+            (box
+                :class "media_buttons"
+                :orientation "h"
+                (button :class "mb" :onclick "playerctl previous" "玲")
+                (button :class "mb" :onclick "playerctl play-pause" {playing == "Playing" ? "" : ""} )
+                (button :class "mb" :onclick "playerctl next" "怜")
+            )
+        )
+        (sliders
+            (labeled
+                :name "墳"
+                (scale :min 0 :max 101 :value volume :onchange "pactl set-sink-volume 0 {}%")
+            )
+            (labeled
+                :name ""
+                (scale :min 0 :max 101 :value 101)
+            )
+            (box :class "internet" ip)
+        )
+    )
+    )
+)
+
+(defwidget sliders []
+    (box
+        :class "slider"
+        :orientation "vertical"
+        (children)
+    )
+)
+
+(defwidget labeled [name]
+    (box
+        :class "sliders"
+        :orientation "horizontal"
+        name
+        (children)
+    )
+)
+
+(defwidget spotify []
+    (box
+        :class "spotify"
+        :orientation "v"
+        (children)
+    )
+)
